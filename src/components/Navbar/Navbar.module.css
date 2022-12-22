@@ -1,7 +1,12 @@
 .navbar {
     grid-area: navigation;
     background: #243434;
+    padding: 20px;
 }
-.item {
-    color: white;
+.item a {
+    color: #f1efef;
+    text-decoration: none;
+}
+.item a.active {
+    color: gold;
 }
