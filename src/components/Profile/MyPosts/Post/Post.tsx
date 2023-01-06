@@ -1,10 +1,8 @@
 import post from "./Post.module.css";
+import {PostType} from "../../../../index";
 
-type PostPropsType = {
-    message: string,
-    like: number,
-}
-export const Post = (props:PostPropsType)=>{
+
+export const Post = (props: PostType)=>{
     return (
         <div className={post.item}>
             <span>
@@ -12,7 +10,7 @@ export const Post = (props:PostPropsType)=>{
                 {props.message}
             </span>
             <div>
-                Like {props.like}
+                Like {props.likes}
             </div>
         </div>
 

@@ -1,13 +1,16 @@
 import mypost from "./Mypost.module.css";
 import {Post} from "./Post/Post";
+import React from "react";
+import {PostType} from "../../../index";
 
-export const Mypost = () => {
+export type PropsType = {
+    postsData: Array<PostType>
+}
 
-    let postsData = [
-        {id: 1, message: "Hello", likes: 5},
-        {id: 2, message: "How are you?", likes: 7},
+export const Mypost = (props: PropsType) => {
 
-    ]
+
+    let postsElements = props.postsData.map(p => <Post id={p.id} message={p.message} likes={p.likes}/>)
 
     return (
         <div className={mypost.mypost}>
@@ -20,8 +23,7 @@ export const Mypost = () => {
             <div>
                 <button>Add post</button>
             </div>
-            <Post message={postsData[0].message} like={postsData[0].likes}/>
-            <Post message={postsData[1].message} like={postsData[1].likes}/>
+            {postsElements}
         </div>
     )
 }

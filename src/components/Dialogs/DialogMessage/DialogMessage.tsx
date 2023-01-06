@@ -1,10 +1,8 @@
 import dialogs from "../Dialogs.module.css";
+import {MessageType} from "../../../index";
 
-type DialogMessageProps = {
-    id: number,
-    message: string
-}
-export const DialogMessage = (props: DialogMessageProps) => {
+
+export const DialogMessage = (props: MessageType) => {
     return (
         <div className={dialogs.message}>{props.message}</div>
     )
